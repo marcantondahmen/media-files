@@ -1,0 +1,1 @@
+Place `.png` files to be optimized here!

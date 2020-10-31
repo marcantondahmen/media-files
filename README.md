@@ -6,5 +6,11 @@ A collection of mockups for Automad and other packages.
 
 ![](https://raw.githubusercontent.com/marcantondahmen/media-files/master/automad/themes/dark.png)
 
+## Optimizing Images
+
+To optimize `.png` files, place them in the `temp` directory and run `node optimize.js`.
+
+---
+
 &copy; 2020 Marc Anton Dahmen &mdash; 
 MIT license
