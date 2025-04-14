@@ -35,7 +35,7 @@
 			main {
 				--gap: 1rem;
 				display: grid;
-				grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+				grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
 				gap: var(--gap);
 				margin-top: var(--gap);
 			}
@@ -51,8 +51,9 @@
 
 			img,
 			video {
-				max-width: 80%;
-				max-height: 80%;
+				width: 80%;
+				height: 80%;
+				object-fit: contain;
 				transform: translateY(0);
 				transition: transform 0.2s;
 			}
