@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "A collection of mockups for Automad and other packages.",
   "main": "optimize.js",
-  "scripts": {},
+  "scripts": {
+    "optimize": "node optimize.js",
+    "build": "bash build.sh"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/marcantondahmen/media-files.git"

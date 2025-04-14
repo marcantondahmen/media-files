@@ -1,3 +1,3 @@
 node_modules
-temp/*.png
-temp/optimized
+temp/*
+public/index.html

@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Media Files | Marc Anton Dahmen</title>
+		<meta name="description" content="Media Files | Marc Anton Dahmen" />
+		<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+		<style>
+			* {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+				text-decoration: none;
+				color: inherit;
+				font-size: 1rem;
+				font-weight: 400;
+				line-height: 1.15;
+			}
+
+			html {
+				-webkit-text-size-adjust: 100%;
+				font-size: 16px;
+				font-family: system-ui, sans-serif;
+				overflow-x: hidden;
+				padding: 1rem;
+				color: hsl(240, 8%, 18%);
+				background-color: hsl(240, 0%, 100%);
+			}
+
+			h2 {
+				color: hsl(240, 12%, 75%);
+			}
+
+			main {
+				--gap: 1rem;
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+				gap: var(--gap);
+				margin-top: var(--gap);
+			}
+
+			a {
+				display: flex;
+				max-width: 100%;
+				justify-content: center;
+				align-items: center;
+				aspect-ratio: 3/4;
+				background-color: hsl(240, 8%, 97.5%);
+			}
+
+			img,
+			video {
+				max-width: 80%;
+				max-height: 80%;
+				transform: translateY(0);
+				transition: transform 0.2s;
+			}
+
+			:hover > img,
+			:hover video {
+				transform: translateY(-10px);
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Media Files</h1>
+		<h2>Marc Anton Dahmen</h2>
+		<main>__ITEMS__</main>
+	</body>
+</html>
