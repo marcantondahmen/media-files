@@ -16,6 +16,6 @@ To optimize `.png` files, place them in the `temp` directory and run `node optim
 
 ---
 
-&copy; 2020 Marc Anton Dahmen &mdash;
+&copy; 2020-2025 Marc Anton Dahmen &mdash;
 MIT license
 
