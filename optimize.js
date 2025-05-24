@@ -1,14 +1,12 @@
-const imagemin = require('imagemin');
-const imageminPngquant = require('imagemin-pngquant');
+import imagemin from 'imagemin';
+import imageminWebp from 'imagemin-webp';
 
-// Taken from https://coderrocketfuel.com/article/compress-a-png-image-size-by-up-to-75-percent-with-node-js
 (async () => {
-	const files = await imagemin(['temp/*.png'], {
+	await imagemin(['temp/*.png'], {
 		destination: 'temp/optimized',
-		plugins: [
-			imageminPngquant({
-				quality: [0.7, 1.0]
-			})
-		]
+		plugins: [imageminWebp({ quality: 70 })],
 	});
+
+	console.log('Images optimized');
 })();
+

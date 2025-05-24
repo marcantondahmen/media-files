@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A collection of mockups for Automad and other packages.",
   "main": "optimize.js",
+  "type": "module",
   "scripts": {
     "optimize": "node optimize.js",
     "build": "bash build.sh"
@@ -16,6 +17,6 @@
   "homepage": "https://github.com/marcantondahmen/media-files#readme",
   "dependencies": {
     "imagemin": "^7.0.1",
-    "imagemin-pngquant": "^9.0.1"
+    "imagemin-webp": "^8.0.0"
   }
 }
