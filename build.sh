@@ -74,5 +74,6 @@ generateGallery() {
 generateGallery
 
 for dir in $directories; do
+	rsync -a --delete $dir public/$dir
 	generateGallery $dir
 done
