@@ -36,18 +36,20 @@
 			nav {
 				display: flex;
 				flex-direction: column;
-				margin-top: var(--gap);
 			}
 
 			nav a:not(.active) {
 				color: hsl(240, 12%, 75%);
 			}
 
-			main {
+			.grid {
 				display: grid;
 				grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
 				gap: var(--gap);
-				margin-top: var(--gap);
+			}
+
+			.grid + .grid {
+				margin-top: 2rem;
 			}
 
 			.card {
@@ -58,6 +60,28 @@
 				aspect-ratio: 3/4;
 				background-color: hsl(240, 8%, 97%);
 				border-radius: 5px;
+			}
+
+			.card.hidden {
+				display: none;
+			}
+
+			input {
+				appearance: none;
+				width: 100%;
+				font-family: inherit;
+				font-size: inherit;
+				border: none;
+				border-radius: 0;
+			}
+
+			input:focus {
+				outline: 1px dashed hsl(240, 12%, 75%);
+				outline-offset: 2px;
+			}
+
+			input::placeholder {
+				color: hsl(240, 12%, 75%);
 			}
 
 			img,
@@ -76,9 +100,29 @@
 		</style>
 	</head>
 	<body>
-		<h1>Media Files</h1>
-		<h2>Marc Anton Dahmen</h2>
-		<nav>__NAV__</nav>
-		<main>__ITEMS__</main>
+		<div class="grid">
+			<div>
+				<h1>Media Files</h1>
+				<h2>Marc Anton Dahmen</h2>
+			</div>
+			<nav>__NAV__</nav>
+			<div>
+				<input type="search" placeholder="Filter files" />
+			</div>
+		</div>
+		<main class="grid">__ITEMS__</main>
+		<script>
+			const input = document.querySelector('input[type="search"]');
+			const cards = document.querySelectorAll('.card');
+
+			input.addEventListener('input', (event) => {
+				cards.forEach((card) => {
+					card.classList.toggle(
+						'hidden',
+						!card.href.includes(input.value || ''),
+					);
+				});
+			});
+		</script>
 	</body>
 </html>
