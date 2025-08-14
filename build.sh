@@ -2,7 +2,7 @@
 
 files=$(git log --pretty='' --name-only | awk '!seen[$0]++' | grep -E '.*(\.png|\.mp4|\.webp)$')
 directories=$(ls -d */ | grep -v temp | grep -v public | grep -v node_modules)
-baseUrl='https://raw.githubusercontent.com/marcantondahmen/media-files/master'
+baseUrl='https://media.marcdahmen.de'
 template=$(<template.html)
 public='./public'
 
