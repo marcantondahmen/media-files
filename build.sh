@@ -15,7 +15,7 @@ homeLink() {
 		cls='class="active"'
 	fi
 
-	echo "<a href=\"./\" $cls>all</a>"
+	echo "<a href=\"./\" $cls>All</a>"
 }
 
 generateGallery() {
@@ -35,9 +35,12 @@ generateGallery() {
 			cls='class="active"'
 		fi
 
+		name=${dir%/}
+		name="${name//-/ }"
+
 		read -r -d '' navItem <<-EOF
 			<a href="./${dir%/}.html" $cls>
-				 ${dir%/}
+				 $name
 			</a>
 		EOF
 
