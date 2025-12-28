@@ -12,10 +12,9 @@ All media files in this repository can be viewed [here](https://marcantondahmen.
 
 ## Optimizing Images
 
-To optimize `.png` files, place them in the `temp` directory and run `node optimize.js`.
+To optimize `.png` files, place them in the `temp` directory and run `npm run optimize`. Optimized `.png` and also `.webp` files can the be found in `temp/optimized`.
 
 ---
 
 &copy; 2020-2025 Marc Anton Dahmen &mdash;
 MIT license
-
