@@ -50,25 +50,27 @@ generateGallery() {
 	templateWithNav="${template/__NAV__/$nav}"
 
 	for file in $(echo $filtered); do
-		url="$baseUrl/$file"
-		element="<img src=\"${url}\" />"
+		if [[ -f "$file" ]]; then
+			url="$baseUrl/$file"
+			element="<img src=\"${url}\" />"
 
-		if [[ $file =~ \.mp4$ ]]; then
-			element="<video playsinline autoplay muted><source src=\"${url}\" type=\"video/mp4\" /></video>"
+			if [[ $file =~ \.mp4$ ]]; then
+				element="<video playsinline autoplay muted><source src=\"${url}\" type=\"video/mp4\" /></video>"
+			fi
+
+			read -r -d '' item <<-EOF
+				<a
+					href="${url}" 
+					class="card"
+					title="${file}"
+					target="_blank"
+				>
+					${element} 
+				</a>
+			EOF
+
+			gallery="${gallery}\n${item}\n"
 		fi
-
-		read -r -d '' item <<-EOF
-			<a
-				href="${url}" 
-				class="card"
-				title="${file}"
-				target="_blank"
-			>
-				${element} 
-			</a>
-		EOF
-
-		gallery="${gallery}\n${item}\n"
 	done
 
 	echo -e "${templateWithNav/__ITEMS__/$gallery}" >"$public/$page.html"
