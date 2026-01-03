@@ -5,7 +5,8 @@
   "main": "optimize.js",
   "type": "module",
   "scripts": {
-    "optimize": "node optimize.js",
+    "optimize:images": "node optimize-images.js",
+    "optimize:videos": "bash optimize-videos.sh",
     "build": "bash build.sh"
   },
   "repository": {
