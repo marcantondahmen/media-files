@@ -1,0 +1,171 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Media Files | Marc Anton Dahmen</title>
+		<meta name="description" content="Media Files | Marc Anton Dahmen" />
+		<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+		<style>
+			* {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+				text-decoration: none;
+				color: inherit;
+				font-size: 1rem;
+				font-weight: 400;
+				line-height: 1.15;
+			}
+
+			html {
+				--gap: 1rem;
+				-webkit-text-size-adjust: 100%;
+				font-size: 16px;
+				font-family: system-ui, sans-serif;
+				overflow-x: hidden;
+				padding: var(--gap);
+				color: hsl(240, 8%, 18%);
+				background-color: hsl(240, 0%, 100%);
+			}
+
+			h2 {
+				color: hsl(240, 12%, 75%);
+			}
+
+			nav {
+				display: flex;
+				flex-direction: column;
+				text-transform: capitalize;
+			}
+
+			nav a:not(.active) {
+				color: hsl(240, 12%, 75%);
+			}
+
+			.grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+				gap: var(--gap);
+			}
+
+			.grid + .grid {
+				margin-top: 2rem;
+			}
+
+			.card {
+				display: flex;
+				max-width: 100%;
+				justify-content: center;
+				align-items: center;
+				aspect-ratio: 3/4;
+				background-color: hsl(240, 8%, 97%);
+				border-radius: 5px;
+			}
+
+			.card.hidden {
+				display: none;
+			}
+
+			input {
+				appearance: none;
+				width: 100%;
+				font-family: inherit;
+				font-size: inherit;
+				background-color: transparent;
+				border: none;
+				border-radius: 0;
+			}
+
+			input:focus {
+				outline: 1px dashed hsl(240, 12%, 75%);
+				outline-offset: 2px;
+			}
+
+			input::placeholder {
+				color: hsl(240, 12%, 75%);
+			}
+
+			img,
+			video {
+				width: 85%;
+				height: 85%;
+				object-fit: contain;
+				transform: translateY(0);
+				transition: transform 0.2s;
+			}
+
+			:hover > img,
+			:hover > video {
+				transform: translateY(-10px);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="grid">
+			<div>
+				<h1>Media Files</h1>
+				<h2>Marc Anton Dahmen</h2>
+			</div>
+			<nav><a href="./" >All</a>
+<a href="./automad-v2.html" >
+ automad v2
+</a>
+<a href="./automad.html" >
+ automad
+</a>
+<a href="./sample-content.html" >
+ sample content
+</a>
+<a href="./starter-kit.html" class="active">
+ starter kit
+</a>
+<a href="./themes.html" >
+ themes
+</a></nav>
+			<div>
+				<input type="search" placeholder="Filter" />
+			</div>
+			<nav>
+				<a
+					href="https://github.com/marcantondahmen/media-files"
+					target="_blank"
+				>
+					GitHub
+				</a>
+			</nav>
+		</div>
+		<main class="grid">
+<a
+href="https://media.marcdahmen.de/starter-kit/automad-theme-starter-kit-browser-dark.webp" 
+class="card"
+title="starter-kit/automad-theme-starter-kit-browser-dark.webp"
+target="_blank"
+>
+<img src="https://media.marcdahmen.de/starter-kit/automad-theme-starter-kit-browser-dark.webp" /> 
+</a>
+
+<a
+href="https://media.marcdahmen.de/starter-kit/automad-theme-starter-kit-browser-light.webp" 
+class="card"
+title="starter-kit/automad-theme-starter-kit-browser-light.webp"
+target="_blank"
+>
+<img src="https://media.marcdahmen.de/starter-kit/automad-theme-starter-kit-browser-light.webp" /> 
+</a>
+</main>
+		<script>
+			const input = document.querySelector('input[type="search"]');
+			const cards = document.querySelectorAll('.card');
+
+			input.addEventListener('input', (event) => {
+				cards.forEach((card) => {
+					card.classList.toggle(
+						'hidden',
+						!card.href.includes(input.value || ''),
+					);
+				});
+			});
+		</script>
+	</body>
+</html>
