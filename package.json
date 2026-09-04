@@ -5,9 +5,10 @@
   "main": "optimize.js",
   "type": "module",
   "scripts": {
+    "build": "bash build.sh",
     "optimize:images": "node optimize-images.js",
     "optimize:videos": "bash optimize-videos.sh",
-    "build": "bash build.sh"
+    "serve": "php -S 0.0.0.0:8000 -t public"
   },
   "repository": {
     "type": "git",
