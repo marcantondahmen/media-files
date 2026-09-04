@@ -1,7 +1,7 @@
 #!/bin/bash
 
 files=$(git log --pretty='' --name-only | awk '!seen[$0]++' | grep -E '.*(\.png|\.mp4|\.webp)$')
-directories=$(ls -d */ | grep -v temp | grep -v public | grep -v node_modules)
+directories=$(ls -d */ | grep -v temp | grep -v public | grep -v node_modules | grep -v ignored)
 baseUrl='https://media.marcdahmen.de'
 template=$(<template.html)
 public='./public'
