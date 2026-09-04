@@ -22,7 +22,7 @@ generateGallery() {
 	page="${1%/}"
 	nav="$(homeLink $1)"
 	gallery=''
-	filtered=$(echo "$files" | grep "$1")
+	filtered=$(echo "$files" | grep "$1" | grep -v ignored)
 
 	if [ -z "$page" ]; then
 		page='index'
